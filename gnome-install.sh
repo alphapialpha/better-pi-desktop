@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Force interactive mode if no terminal detected
+[ -t 0 ] || exec bash -i "$0" "$@"
+
 # GNOME for Wayland Auto-Installer for Raspberry Pi 4/5
 # With optimized Chromium flags (hardware decoding enabled)
 
@@ -6,7 +10,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 # ===== 2. System Update =====
-sudo apt update && sudo apt full-upgrade
+sudo apt update && sudo apt full-upgrade -y
 
 # ===== 3. Install GNOME + GDM + Extensions =====
 echo "gdm3 shared/default-display-manager select gdm3" | sudo debconf-set-selections
