@@ -6,7 +6,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 # ===== 2. System Update =====
-sudo apt update && sudo apt full-upgrade -y
+sudo apt update && sudo apt full-upgrade
 
 # ===== 3. Install GNOME + GDM + Extensions =====
 echo "gdm3 shared/default-display-manager select gdm3" | sudo debconf-set-selections
