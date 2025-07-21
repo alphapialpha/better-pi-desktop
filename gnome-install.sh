@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Force interactive mode if no terminal detected
-[ -t 0 ] || exec bash -i "$0" "$@"
-
 # GNOME for Wayland Auto-Installer for Raspberry Pi 4/5
 # With optimized Chromium flags (hardware decoding enabled)
 
