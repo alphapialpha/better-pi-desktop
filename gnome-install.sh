@@ -21,7 +21,7 @@ sudo apt install -y \
   chromium-codecs-ffmpeg-extra  # Added for better codec support
 
 # ===== 4. Configure Wayland =====
-#nothing to do here at the moment
+# Nothing to do here at the moment
 
 # ===== 5. GPU & Chromium Setup =====
 # Mesa drivers (Pi 5)
@@ -36,11 +36,9 @@ sudo apt install -y \
 sudo mkdir -p /etc/chromium.d/
 echo 'CHROMIUM_FLAGS="--ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-memory-buffer-video-frames --enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder --num-raster-threads=4 --enable-oop-rasterization --canvas-oop-rasterization --enable-native-gpu-memory-buffers"' | sudo tee /etc/chromium.d/custom-flags
 
-
 # ===== 7. Final Steps =====
 sudo systemctl set-default graphical.target
 sudo apt autoremove -y
-
 
 # ===== 8. Reboot =====
 echo "Installation complete. Rebooting in 5 seconds..."
