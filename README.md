@@ -1,7 +1,16 @@
-Perform a fresh install of _Raspberry Pi OS Lite_ and boot up the system, go through basic setup (language / keyboard / user). Then execute:
-```
-curl -sSL https://raw.githubusercontent.com/alphapialpha/better-pi-desktop/refs/heads/main/gnome-install.sh > install.sh
-bash install.sh
-```
-It will update the system and perform an installation of _GNOME_ with _GDM_ and install a performance optimized _Chromium_ as a webbrowser. That's it! The rest is up to you...
-Enjoy!
+# Better-Pi-Desktop  
+Automatically install a minimal desktop environment (GNOME, GDM, and hardware-accelerated Chromium) on Raspberry Pi OS Lite.
+
+## Steps:
+1. Start with a fresh install of _Raspberry Pi OS Lite_ and boot up the system. Complete the basic setup (language, keyboard, user).
+2. Run the following commands:
+   ```bash
+   curl -sSL https://raw.githubusercontent.com/alphapialpha/better-pi-desktop/refs/heads/main/gnome-install.sh > install.sh
+   bash install.sh
+   ```
+3. That's it!
+
+The script will update your system, install _GNOME_ with _GDM_, and set up a performance-optimized version of _Chromium_ as your web browser.  
+The rest is up to you.
+
+**Enjoy!**
