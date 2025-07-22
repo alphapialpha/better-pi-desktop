@@ -1,13 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
 # GNOME for Wayland Auto-Installer for Raspberry Pi 4/5
 # With optimized Chromium flags (hardware decoding enabled)
 
 # ===== 1. Force Non-Interactive Mode =====
 export DEBIAN_FRONTEND=noninteractive
+FORCE_OPTS='-o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"'
 
 # ===== 2. System Update =====
-sudo apt update && sudo apt full-upgrade -y
+sudo apt-get update && sudo apt-get $FORCE_OPTS full-upgrade -y
 
 # ===== 3. Install GNOME + GDM + Extensions =====
 echo "gdm3 shared/default-display-manager select gdm3" | sudo debconf-set-selections
