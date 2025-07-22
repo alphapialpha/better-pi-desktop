@@ -12,7 +12,7 @@ sudo apt-get update && sudo apt-get $FORCE_OPTS full-upgrade -y
 
 # ===== 3. Install GNOME + GDM + Extensions =====
 echo "gdm3 shared/default-display-manager select gdm3" | sudo debconf-set-selections
-sudo apt install -y \
+sudo apt-get $FORCE_OPTS install -y \
   gnome-core \
   gdm3 \
   gnome-shell \
@@ -27,20 +27,20 @@ sudo apt install -y \
 
 # ===== 5. GPU & Chromium Setup =====
 # Mesa drivers (Pi 5)
-sudo apt install -y \
+sudo apt-get $FORCE_OPTS install -y \
   mesa-va-drivers \
   mesa-vulkan-drivers \
   libgl1-mesa-dri \
   libegl1-mesa \
   libgbm1
 
-# ===== 6. Optimized Chromium flags & h264ify Plugin
+# ===== 6. Optimized Chromium flags & h264ify Plugin =====
 sudo mkdir -p /etc/chromium.d/
-echo 'CHROMIUM_FLAGS="--ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-memory-buffer-video-frames --enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder --num-raster-threads=4 --enable-oop-rasterization --canvas-oop-rasterization --enable-native-gpu-memory-buffers"' | sudo tee /etc/chromium.d/custom-flags
+echo 'CHROMIUM_FLAGS="--ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-memory-buffer-video-frames --enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder --num-raster-threads=4 --enable-oop-rasterization --canvas-oop-rasterization --enable-native-gpu-memory-buffers"' | sudo tee /etc/chromium.d/custom-flags > /dev/null
 
 # ===== 7. Final Steps =====
 sudo systemctl set-default graphical.target
-sudo apt autoremove -y
+sudo apt-get autoremove -y
 
 # ===== 8. Reboot =====
 echo "Installation complete. Rebooting in 5 seconds..."
