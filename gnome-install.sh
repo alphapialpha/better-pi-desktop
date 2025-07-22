@@ -1,18 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 
 # GNOME for Wayland Auto-Installer for Raspberry Pi 4/5
 # With optimized Chromium flags (hardware decoding enabled)
 
 # ===== 1. Force Non-Interactive Mode =====
 export DEBIAN_FRONTEND=noninteractive
-FORCE_OPTS='-o Dpkg::Options::="--force-confnew"'
 
 # ===== 2. System Update =====
-sudo apt-get update && sudo apt-get $FORCE_OPTS full-upgrade -y
+sudo apt update && sudo apt full-upgrade -y
 
 # ===== 3. Install GNOME + GDM + Extensions =====
 echo "gdm3 shared/default-display-manager select gdm3" | sudo debconf-set-selections
-sudo apt-get $FORCE_OPTS install -y \
+sudo apt install -y \
   gnome-core \
   gdm3 \
   gnome-shell \
@@ -27,7 +26,7 @@ sudo apt-get $FORCE_OPTS install -y \
 
 # ===== 5. GPU & Chromium Setup =====
 # Mesa drivers (Pi 5)
-sudo apt-get $FORCE_OPTS install -y \
+sudo apt install -y \
   mesa-va-drivers \
   mesa-vulkan-drivers \
   libgl1-mesa-dri \
@@ -40,7 +39,7 @@ echo 'CHROMIUM_FLAGS="--ignore-gpu-blocklist --enable-gpu-rasterization --enable
 
 # ===== 7. Final Steps =====
 sudo systemctl set-default graphical.target
-sudo apt-get autoremove -y
+sudo apt autoremove -y
 
 # ===== 8. Reboot =====
 echo "Installation complete. Rebooting in 5 seconds..."
