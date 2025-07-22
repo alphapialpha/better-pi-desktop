@@ -5,7 +5,7 @@
 
 # ===== 1. Force Non-Interactive Mode =====
 export DEBIAN_FRONTEND=noninteractive
-FORCE_OPTS='-o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"'
+FORCE_OPTS='-o Dpkg::Options::="--force-confnew"'
 
 # ===== 2. System Update =====
 sudo apt-get update && sudo apt-get $FORCE_OPTS full-upgrade -y
