@@ -29,18 +29,14 @@ sudo apt install -y \
   mesa-va-drivers \
   mesa-vulkan-drivers \
   libgl1-mesa-dri \
-  libegl1-mesa \
   libgbm1
 
 # ===== 6. Optimized Chromium flags & h264ify Plugin =====
-sudo mkdir -p /etc/chromium.d/
-echo 'CHROMIUM_FLAGS="--ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-memory-buffer-video-frames --enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder --num-raster-threads=4 --enable-oop-rasterization --canvas-oop-rasterization --enable-native-gpu-memory-buffers"' | sudo tee /etc/chromium.d/custom-flags > /dev/null
+#not necessary anymore
 
 # ===== 7. Final Steps =====
 sudo systemctl set-default graphical.target
 sudo apt autoremove -y
 
 # ===== 8. Reboot =====
-echo "Installation complete. Rebooting in 5 seconds..."
-sleep 5
-sudo reboot
+echo "Installation complete. Check for errors and do a 'sudo reboot'"
