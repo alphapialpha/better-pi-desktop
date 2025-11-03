@@ -5,8 +5,7 @@ Automatically install a minimal desktop environment (GNOME, GDM, and hardware-ac
 1. Start with a fresh install of _Raspberry Pi OS Lite_ and boot up the system. Complete the basic setup (language, keyboard, user).
 2. Run the following commands:
    ```bash
-   curl -sSL https://raw.githubusercontent.com/alphapialpha/better-pi-desktop/refs/heads/main/gnome-install.sh > install.sh
-   bash install.sh
+   wget -O - https://raw.githubusercontent.com/alphapialpha/better-pi-desktop/main/gnome-install.sh | bash
    ```
 3. That's it!
 
