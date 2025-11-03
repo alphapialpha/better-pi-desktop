@@ -18,8 +18,7 @@ sudo apt install -y \
   gnome-session \
   gnome-shell-extensions \
   gnome-tweaks \
-  chromium-browser \
-  chromium-codecs-ffmpeg-extra  # Added for better codec support
+  chromium
 
 # ===== 4. Configure Wayland =====
 # Nothing to do here at the moment
