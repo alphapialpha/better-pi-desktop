@@ -1,5 +1,5 @@
 # Better-Pi-Desktop  
-Automatically install a minimal desktop environment (GNOME, GDM, and hardware-accelerated Chromium) on Raspberry Pi OS Lite.
+Automatically install a minimal desktop environment (GNOME, GDM, and hardware-accelerated Chromium) on a fresh Raspberry Pi OS Lite installation.
 
 ### Steps:
 1. Start with a fresh install of _Raspberry Pi OS Lite_ and boot up the system. Complete the basic setup (language, keyboard, user).
